@@ -21,19 +21,19 @@ export interface Service {
 }
 
 export const SERVICES: Service[] = [
-  {
-    id: "car-wash",
-    slug: "car-wash",
-    title: "Car Wash",
-    tagline: "Professional Mechanized Cleaning for a Spotless Shine",
-    description: [
-      "Urban Auto redefines the standard car wash experience in Raipur. Our mechanized cleaning process uses high-pressure water jets and premium pH-balanced shampoos to remove stubborn dirt, grime, and environmental contaminants without damaging your vehicle's delicate clear coat.",
-      "We don't just wash your car; we rejuvenate it. Our advanced equipment ensures that every nook and corner, including the underbody and wheel arches, is thoroughly cleaned. This attention to detail prevents corrosion and maintains your car's aesthetic appeal for longer.",
-      "Using spray injection and extraction machines, we ensure a deep clean that manual washing simply cannot achieve. Our process is eco-friendly, efficient, and designed to provide a showroom-like finish every single time.",
-    ],
-    icon: "ShowerHead",
-    image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=1200",
-    included: [
+    {
+      id: "car-wash",
+      slug: "car-wash",
+      title: "Car Wash",
+      tagline: "Professional Mechanized Cleaning for a Spotless Shine",
+      description: [
+        "Urban Auto redefines the standard car wash experience in Raipur. Our mechanized cleaning process uses high-pressure water jets and premium pH-balanced shampoos to remove stubborn dirt, grime, and environmental contaminants without damaging your vehicle's delicate clear coat.",
+        "We don't just wash your car; we rejuvenate it. Our advanced equipment ensures that every nook and corner, including the underbody and wheel arches, is thoroughly cleaned. This attention to detail prevents corrosion and maintains your car's aesthetic appeal for longer.",
+        "Using spray injection and extraction machines, we ensure a deep clean that manual washing simply cannot achieve. Our process is eco-friendly, efficient, and designed to provide a showroom-like finish every single time.",
+      ],
+      icon: "ShowerHead",
+      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/aa06d267-e334-4e28-9c88-e58ebe55d970/washing-1-1768161789543.png?width=8000&height=8000&resize=contain",
+      included: [
       "High-pressure external wash",
       "Underbody cleaning",
       "Wheel arch & rim detailing",
