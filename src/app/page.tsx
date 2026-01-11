@@ -130,12 +130,12 @@ export default function Home() {
               className="relative aspect-square"
             >
               <div className="absolute inset-0 border-2 border-brand-blue/30 translate-x-4 translate-y-4 -z-10" />
-              <Image
-                src="https://images.unsplash.com/photo-1563720223185-11003d516905?q=80&w=1200"
-                alt="Urban Auto Workshop"
-                fill
-                className="object-cover"
-              />
+                <Image
+                  src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200"
+                  alt="Urban Auto Workshop"
+                  fill
+                  className="object-cover"
+                />
               <div className="absolute -bottom-8 -right-8 bg-brand-charcoal border border-white/10 p-8 hidden md:block">
                 <p className="text-4xl font-heading text-brand-blue mb-1">100%</p>
                 <p className="text-xs uppercase tracking-widest font-bold text-white">Customer Trust</p>
