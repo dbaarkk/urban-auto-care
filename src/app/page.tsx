@@ -83,13 +83,13 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-brand-blue hover:bg-brand-blue/80 text-white rounded-none h-14 px-8 text-sm font-bold uppercase tracking-widest group">
+              <Button asChild size="lg" className="bg-brand-blue hover:bg-brand-blue/80 text-white rounded-full h-14 px-8 text-sm font-bold uppercase tracking-widest group">
                 <Link href="/#services" className="flex items-center gap-2">
                   Explore Services
                   <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/20 hover:bg-white/10 rounded-none h-14 px-8 text-sm font-bold uppercase tracking-widest">
+              <Button asChild variant="outline" size="lg" className="border-white/20 hover:bg-white/10 rounded-full h-14 px-8 text-sm font-bold uppercase tracking-widest">
                 <Link href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center gap-2">
                   <Phone size={18} />
                   Call Now
@@ -273,13 +273,13 @@ export default function Home() {
               Ready to Give Your Car <br /> The <span className="text-brand-blue">Urban Auto</span> Treatment?
             </h2>
             <div className="flex flex-wrap justify-center gap-6">
-              <Button asChild size="lg" className="bg-brand-blue hover:bg-brand-blue/80 text-white rounded-none h-16 px-10 text-base font-bold uppercase tracking-widest">
+              <Button asChild size="lg" className="bg-brand-blue hover:bg-brand-blue/80 text-white rounded-full h-16 px-10 text-base font-bold uppercase tracking-widest">
                 <Link href="/contact" className="flex items-center gap-2">
                   <Calendar size={20} />
                   Book Appointment
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/20 hover:bg-white/10 rounded-none h-16 px-10 text-base font-bold uppercase tracking-widest">
+              <Button asChild variant="outline" size="lg" className="border-white/20 hover:bg-white/10 rounded-full h-16 px-10 text-base font-bold uppercase tracking-widest">
                 <Link href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center gap-2">
                   <Phone size={20} />
                   Call Us Now
