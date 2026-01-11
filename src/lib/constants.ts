@@ -2,7 +2,7 @@ export const BRAND_NAME = "URBAN AUTO";
 export const TAGLINE = "Quality Car Service Provider in Raipur";
 export const PHONE = "+91 88898 22220";
 export const WHATSAPP = "918889822220";
-export const EMAIL = "info@urbanauto.in";
+export const EMAIL = "support@theurbanauto.com";
 export const ADDRESS = "Sunder Nagar, Raipur, Chhattisgarh";
 export const WORKING_HOURS = "9:00 AM – 9:00 PM";
 export const LOGO_URL = "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/logo-1768160895635.jpg?width=8000&height=8000&resize=contain";
