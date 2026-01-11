@@ -1,0 +1,354 @@
+export const BRAND_NAME = "URBAN AUTO";
+export const TAGLINE = "Quality Car Service Provider in Raipur";
+export const PHONE = "+91 88898 22220";
+export const WHATSAPP = "88898 22220";
+export const EMAIL = "info@urbanauto.in";
+export const ADDRESS = "Sunder Nagar, Raipur, Chhattisgarh";
+export const WORKING_HOURS = "9:00 AM – 9:00 PM";
+export const LOGO_URL = "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/logo-1768160895635.jpg?width=8000&height=8000&resize=contain";
+
+export interface Service {
+  id: string;
+  slug: string;
+  title: string;
+  tagline: string;
+  description: string[];
+  icon: string;
+  image: string;
+  included: string[];
+  process: { step: string; title: string; description: string }[];
+  benefits: string[];
+}
+
+export const SERVICES: Service[] = [
+  {
+    id: "car-wash",
+    slug: "car-wash",
+    title: "Car Wash",
+    tagline: "Professional Mechanized Cleaning for a Spotless Shine",
+    description: [
+      "Urban Auto redefines the standard car wash experience in Raipur. Our mechanized cleaning process uses high-pressure water jets and premium pH-balanced shampoos to remove stubborn dirt, grime, and environmental contaminants without damaging your vehicle's delicate clear coat.",
+      "We don't just wash your car; we rejuvenate it. Our advanced equipment ensures that every nook and corner, including the underbody and wheel arches, is thoroughly cleaned. This attention to detail prevents corrosion and maintains your car's aesthetic appeal for longer.",
+      "Using spray injection and extraction machines, we ensure a deep clean that manual washing simply cannot achieve. Our process is eco-friendly, efficient, and designed to provide a showroom-like finish every single time.",
+    ],
+    icon: "ShowerHead",
+    image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=1200",
+    included: [
+      "High-pressure external wash",
+      "Underbody cleaning",
+      "Wheel arch & rim detailing",
+      "Foam shampoo treatment",
+      "Drying with microfiber towels",
+      "Tyre dressing & polish",
+    ],
+    process: [
+      { step: "01", title: "Inspection", description: "Initial assessment of dirt levels and sensitive areas." },
+      { step: "02", title: "Pressure Wash", description: "Removing loose debris with high-pressure water." },
+      { step: "03", title: "Foam Bath", description: "Applying premium snow foam to break down grime." },
+      { step: "04", title: "Deep Clean", description: "Gentle agitation and rinsing for a perfect finish." },
+    ],
+    benefits: [
+      "Prevents paint oxidation",
+      "Removes corrosive salt and grit",
+      "Maintains vehicle's resale value",
+      "Provides instant aesthetic boost",
+    ],
+  },
+  {
+    id: "interior-detailing",
+    slug: "interior-detailing",
+    title: "Interior Detailing",
+    tagline: "Complete Cabin Rejuvenation & Sanitization",
+    description: [
+      "Your car's interior is where you spend most of your time. Our interior detailing service goes beyond simple vacuuming to provide a deep, clinical clean. We use specialized steam cleaners and extraction machines to remove deep-seated dust, allergens, and bacteria from upholstery, carpets, and headliners.",
+      "We pay special attention to every surface—leather, vinyl, plastic, and fabric. Our professional-grade chemicals are tough on stains but gentle on materials, ensuring your cabin looks and smells like new without any oily residue.",
+      "In the dusty environment of Raipur, interior maintenance is crucial. Our process includes AC vent cleaning and dashboard conditioning, providing a healthy environment for you and your family.",
+    ],
+    icon: "Armchair",
+    image: "https://images.unsplash.com/photo-1599256621730-535171e28e50?q=80&w=1200",
+    included: [
+      "Deep upholstery steam cleaning",
+      "Carpet extraction & vacuuming",
+      "Dashboard & console detailing",
+      "AC vent sanitization",
+      "Headliner spot cleaning",
+      "Leather conditioning",
+    ],
+    process: [
+      { step: "01", title: "Dry Vacuum", description: "Removing all loose debris from every corner." },
+      { step: "02", title: "Steam Treatment", description: "Sanitizing surfaces and loosening deep stains." },
+      { step: "03", title: "Extraction", description: "Deep cleaning fabrics with injection-extraction." },
+      { step: "04", title: "Protection", description: "Applying UV protectants to all surfaces." },
+    ],
+    benefits: [
+      "Eliminates odors and bacteria",
+      "Improves air quality inside cabin",
+      "Restores look and feel of materials",
+      "Prevents cracking of leather and plastic",
+    ],
+  },
+  {
+    id: "exterior-detailing",
+    slug: "exterior-detailing",
+    title: "Exterior Detailing",
+    tagline: "Unmatched Shine & Paint Protection",
+    description: [
+      "Our Exterior Detailing is a comprehensive paint correction and protection process. We use multi-stage polishing techniques to remove swirl marks, minor scratches, and oxidation, restoring the original depth and clarity of your vehicle's paintwork.",
+      "Raipur's harsh sun and industrial dust can take a toll on your car's exterior. We apply high-quality sealants or waxes that create a sacrificial barrier against UV rays, bird droppings, and acid rain.",
+      "Every detail matters—from the chrome trim to the plastic moldings. Our technicians use precision tools to ensure every inch of your car's exterior is perfected and protected.",
+    ],
+    icon: "Sparkles",
+    image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1200",
+    included: [
+      "Clay bar treatment",
+      "Multi-stage paint correction",
+      "Premium wax or sealant application",
+      "Chrome & metal polishing",
+      "Plastic trim restoration",
+      "Glass cleaning & polishing",
+    ],
+    process: [
+      { step: "01", title: "Decontamination", description: "Removing iron particles and bonded surface dirt." },
+      { step: "02", title: "Correction", description: "Machine polishing to remove swirl marks." },
+      { step: "03", title: "Refining", description: "Finishing polish for maximum gloss and depth." },
+      { step: "04", title: "Protection", description: "Applying a durable layer of protection." },
+    ],
+    benefits: [
+      "Showroom-quality mirror finish",
+      "Long-term paint preservation",
+      "Easier maintenance and cleaning",
+      "Superior hydrophobic properties",
+    ],
+  },
+  {
+    id: "periodic-service",
+    slug: "periodic-service",
+    title: "Periodic Service",
+    tagline: "Expert Maintenance for Peak Performance",
+    description: [
+      "Regular maintenance is the key to a long-lasting vehicle. Our Periodic Service follows strict manufacturer guidelines to ensure your car remains in peak mechanical condition. We use high-quality oils, filters, and genuine spare parts.",
+      "Our trained technicians perform a comprehensive 50-point inspection, identifying potential issues before they become expensive repairs. From oil changes to brake checks, we cover every critical system of your vehicle.",
+      "At Urban Auto Raipur, we combine advanced diagnostic tools with years of mechanical expertise to provide a service that is both thorough and transparent.",
+    ],
+    icon: "Settings",
+    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=1200",
+    included: [
+      "Engine oil & filter replacement",
+      "Air filter & cabin filter check",
+      "Brake inspection & cleaning",
+      "Coolant & fluid top-ups",
+      "Spark plug & belt inspection",
+      "Battery health check",
+    ],
+    process: [
+      { step: "01", title: "Diagnosis", description: "Full vehicle scan and manual inspection." },
+      { step: "02", title: "Draining", description: "Safe disposal of old fluids and filters." },
+      { step: "03", title: "Replenishing", description: "Filling with premium oils and new filters." },
+      { step: "04", title: "Testing", description: "Final road test and performance validation." },
+    ],
+    benefits: [
+      "Enhanced engine longevity",
+      "Improved fuel efficiency",
+      "Smooth and safe driving experience",
+      "Maintained service history records",
+    ],
+  },
+  {
+    id: "denting-painting",
+    slug: "denting-painting",
+    title: "Denting & Painting",
+    tagline: "Precision Body Work & Factory Finish",
+    description: [
+      "Accidents happen, but they don't have to leave a permanent mark. Our body shop features expert denters and painters who specialize in restoring your car's body to its original shape and color. We use advanced pullers and tools for precision dent removal.",
+      "Our paint booth ensures a dust-free environment for a flawless finish. We use computer-controlled color matching to ensure the new paint blends perfectly with your car's existing panels.",
+      "We use premium paints and clear coats that are durable and resistant to fading, ensuring that our repair work stands the test of time.",
+    ],
+    icon: "Paintbrush",
+    image: "https://images.unsplash.com/photo-1597766353939-668582963a7a?q=80&w=1200",
+    included: [
+      "Precision dent removal",
+      "Panel alignment",
+      "Computerized color matching",
+      "Multi-layer paint application",
+      "Clear coat protection",
+      "Full panel buffing",
+    ],
+    process: [
+      { step: "01", title: "Surface Prep", description: "Stripping and straightening the damaged area." },
+      { step: "02", title: "Filling", description: "Applying high-quality body filler and sanding." },
+      { step: "03", title: "Priming", description: "Preparing the surface for paint adhesion." },
+      { step: "04", title: "Painting", description: "Applying base coat and clear coat in the booth." },
+    ],
+    benefits: [
+      "Invisible repair quality",
+      "Corrosion protection for metal",
+      "Restores structural integrity",
+      "Enhances vehicle appearance",
+    ],
+  },
+  {
+    id: "suspension-fitments",
+    slug: "suspension-fitments",
+    title: "Suspension & Fitments",
+    tagline: "Smooth Handling & Ride Comfort",
+    description: [
+      "A car's suspension system is critical for both comfort and safety. We offer complete suspension overhaul services, including shock absorber replacement, bushing changes, and steering rack repairs.",
+      "Whether you're feeling every bump on Raipur's roads or hearing strange noises while turning, our experts can diagnose and fix the root cause. We also handle specialized fitments and upgrades.",
+      "Correct suspension maintenance ensures better tyre life and improved braking performance, making it a vital part of your vehicle's health.",
+    ],
+    icon: "Wrench",
+    image: "https://images.unsplash.com/photo-1517520287167-4bda64282b54?q=80&w=1200",
+    included: [
+      "Shock absorber testing",
+      "Bushing & ball joint replacement",
+      "Steering system inspection",
+      "Wheel alignment check",
+      "Link rod replacement",
+      "Coil spring inspection",
+    ],
+    process: [
+      { step: "01", title: "Assessment", description: "Road test and under-chassis inspection." },
+      { step: "02", title: "Dismantling", description: "Safe removal of worn suspension components." },
+      { step: "03", title: "Installation", description: "Fitting genuine or high-performance parts." },
+      { step: "04", title: "Alignment", description: "Ensuring wheels are perfectly positioned." },
+    ],
+    benefits: [
+      "Superior ride comfort",
+      "Better handling and stability",
+      "Reduced tyre wear",
+      "Safer cornering and braking",
+    ],
+  },
+  {
+    id: "clutch-body-parts",
+    slug: "clutch-body-parts",
+    title: "Clutch & Body Parts",
+    tagline: "Seamless Power Delivery & Component Replacement",
+    description: [
+      "The clutch is the heart of your car's transmission. If you're experiencing gear slip, a hard pedal, or shuddering, it's time for a professional check. We replace clutch plates, pressure plates, and release bearings using OE-spec parts.",
+      "We also handle the replacement of various body parts—from bumpers and grilles to lights and mirrors. Our technicians ensure that every part is fitted with factory-level precision.",
+      "Maintaining your drivetrain and body components is essential for the overall efficiency and safety of your vehicle.",
+    ],
+    icon: "Disc",
+    image: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200",
+    included: [
+      "Clutch set replacement",
+      "Flywheel resurfacing",
+      "Clutch cable/cylinder check",
+      "Bumper & grille fitting",
+      "Headlight & taillight replacement",
+      "Door handle & lock repair",
+    ],
+    process: [
+      { step: "01", title: "Testing", description: "Checking clutch engagement and body alignment." },
+      { step: "02", title: "Extraction", description: "Removing the gearbox or damaged body panels." },
+      { step: "03", title: "Replacement", description: "Installing new, genuine components." },
+      { step: "04", title: "Calibration", description: "Adjusting for smooth operation and fitment." },
+    ],
+    benefits: [
+      "Smooth gear transitions",
+      "Restored acceleration power",
+      "Perfect aesthetic fitment",
+      "Prevents further drivetrain damage",
+    ],
+  },
+  {
+    id: "insurance-claims",
+    slug: "insurance-claims",
+    title: "Insurance Claims",
+    tagline: "Hassle-Free Accident Recovery",
+    description: [
+      "Dealing with insurance after an accident can be stressful. Urban Auto Raipur simplifies the process by acting as your bridge to the insurance company. We assist with documentation and coordinate with surveyors for a smooth claim process.",
+      "We work with all major insurance providers to facilitate cashless repairs where applicable. Our goal is to get your car back on the road with minimal administrative burden on you.",
+      "Transparency is our priority. We provide detailed estimates and keep you informed at every stage of the claim and repair process.",
+    ],
+    icon: "ShieldCheck",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200",
+    included: [
+      "Assistance with claim filing",
+      "Detailed damage estimation",
+      "Coordination with surveyors",
+      "Cashless repair facilitation",
+      "Documentation support",
+      "Final billing & settlement",
+    ],
+    process: [
+      { step: "01", title: "Reporting", description: "Intimating the insurance company of the damage." },
+      { step: "02", title: "Survey", description: "On-site inspection by the insurance surveyor." },
+      { step: "03", title: "Approval", description: "Receiving the work order from the insurer." },
+      { step: "04", title: "Delivery", description: "Handover of the car after claim settlement." },
+    ],
+    benefits: [
+      "Stress-free documentation",
+      "Faster claim approvals",
+      "Genuine parts guarantee",
+      "Professional liaison with insurers",
+    ],
+  },
+  {
+    id: "roadside-assistance",
+    slug: "roadside-assistance",
+    title: "Roadside Assistance",
+    tagline: "Reliable Support Whenever You Need It",
+    description: [
+      "Getting stranded on the road is every driver's nightmare. Urban Auto's Roadside Assistance is just a call away in Raipur. Whether it's a flat tyre, a dead battery, or an empty fuel tank, our quick-response team is ready to help.",
+      "We provide on-site minor repairs to get you moving again. If the problem is more serious, we offer professional towing services to our workshop for comprehensive care.",
+      "Our technicians are equipped with the right tools to handle emergencies safely and efficiently, ensuring you're never alone on the road.",
+    ],
+    icon: "Truck",
+    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1200",
+    included: [
+      "Flat tyre change",
+      "Battery jump-start",
+      "Emergency fuel delivery",
+      "Minor on-site mechanical repairs",
+      "Lockout assistance",
+      "Professional towing",
+    ],
+    process: [
+      { step: "01", title: "Call-in", description: "Our emergency helpline is available for you." },
+      { step: "02", title: "Dispatch", description: "Assigning the nearest technician to your location." },
+      { step: "03", title: "Assistance", description: "On-site repair or recovery assessment." },
+      { step: "04", title: "Resolution", description: "Getting you back on the road or towed." },
+    ],
+    benefits: [
+      "24/7 peace of mind",
+      "Quick response times",
+      "Professional and safe handling",
+      "Expert help in critical situations",
+    ],
+  },
+  {
+    id: "accidental-repair",
+    slug: "accidental-repair",
+    title: "Accidental Repair",
+    tagline: "Major Collision Repair Specialists",
+    description: [
+      "Major accidents require more than just a quick fix; they require structural restoration. Our Accidental Repair center is equipped with heavy-duty chassis aligners and advanced welding equipment to restore your car's safety standards.",
+      "We understand that a car's integrity is compromised after a collision. Our team focuses on restoring original crumple zones and ensuring that every mechanical and electrical system is re-integrated perfectly.",
+      "From engine-out repairs to full-body reconstruction, we handle the most complex cases with a commitment to quality and safety.",
+    ],
+    icon: "ShieldAlert",
+    image: "https://images.unsplash.com/photo-1599256621730-535171e28e50?q=80&w=1200",
+    included: [
+      "Chassis straightening",
+      "Engine & transmission repair",
+      "Electrical system restoration",
+      "Safety system (Airbag) check",
+      "Full body realignment",
+      "Final safety certification",
+    ],
+    process: [
+      { step: "01", title: "Stripping", description: "Detailed dismantling to find hidden damage." },
+      { step: "02", title: "Restoration", description: "Major structural and mechanical repairs." },
+      { step: "03", title: "Reassembly", description: "Fitting all components back to OE standards." },
+      { step: "04", title: "Quality Audit", description: "Extensive testing for safety and performance." },
+    ],
+    benefits: [
+      "Restores vehicle safety standards",
+      "Expertise in major collision repair",
+      "Highest quality parts and materials",
+      "Comprehensive warranty on repairs",
+    ],
+  },
+];
