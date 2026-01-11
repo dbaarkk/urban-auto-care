@@ -6,7 +6,7 @@ import Script from "next/script";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
-import { BRAND_NAME, TAGLINE } from "@/lib/constants";
+import { BRAND_NAME, TAGLINE, LOGO_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: `${BRAND_NAME} | ${TAGLINE}`,
