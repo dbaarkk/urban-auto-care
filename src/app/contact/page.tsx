@@ -172,7 +172,7 @@ export default function ContactPage() {
                         <Input 
                           placeholder="John Doe" 
                           required 
-                          className="bg-white/5 border-white/10 rounded-none h-12 text-white focus:border-brand-blue"
+                          className="bg-white/5 border-white/10 rounded-xl h-12 text-white focus:border-brand-blue"
                         />
                       </div>
                       <div className="space-y-2">
@@ -181,7 +181,7 @@ export default function ContactPage() {
                           placeholder="+91 00000 00000" 
                           required 
                           type="tel"
-                          className="bg-white/5 border-white/10 rounded-none h-12 text-white focus:border-brand-blue"
+                          className="bg-white/5 border-white/10 rounded-xl h-12 text-white focus:border-brand-blue"
                         />
                       </div>
                     </div>
@@ -189,7 +189,7 @@ export default function ContactPage() {
                     <div className="space-y-2">
                       <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">Service Required</label>
                       <Select>
-                        <SelectTrigger className="bg-white/5 border-white/10 rounded-none h-12 text-white focus:border-brand-blue">
+                        <SelectTrigger className="bg-white/5 border-white/10 rounded-xl h-12 text-white focus:border-brand-blue">
                           <SelectValue placeholder="Select a service" />
                         </SelectTrigger>
                         <SelectContent className="bg-brand-charcoal border-white/10 text-white">
@@ -208,11 +208,11 @@ export default function ContactPage() {
                         placeholder="Tell us about your requirements..." 
                         required 
                         rows={5}
-                        className="bg-white/5 border-white/10 rounded-none text-white focus:border-brand-blue resize-none"
+                        className="bg-white/5 border-white/10 rounded-xl text-white focus:border-brand-blue resize-none"
                       />
                     </div>
 
-                    <Button type="submit" className="w-full bg-brand-blue hover:bg-brand-blue/80 text-white rounded-none h-14 text-sm font-bold uppercase tracking-widest group">
+                    <Button type="submit" className="w-full bg-brand-blue hover:bg-brand-blue/80 text-white rounded-full h-14 text-sm font-bold uppercase tracking-widest group">
                       <span className="flex items-center gap-2">
                         Send Message
                         <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
