@@ -64,7 +64,7 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button asChild variant="outline" className="border-brand-blue/50 text-brand-blue hover:bg-brand-blue hover:text-white rounded-none uppercase tracking-widest text-xs font-bold px-6">
+          <Button asChild variant="outline" className="border-brand-blue/50 text-brand-blue hover:bg-brand-blue hover:text-white rounded-full uppercase tracking-widest text-xs font-bold px-6">
             <Link href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center gap-2">
               <Phone size={14} />
               {PHONE}
@@ -101,7 +101,7 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Button asChild className="bg-brand-blue hover:bg-brand-blue/80 text-white rounded-none uppercase tracking-widest font-bold mt-4">
+              <Button asChild className="bg-brand-blue hover:bg-brand-blue/80 text-white rounded-full uppercase tracking-widest font-bold mt-4">
                 <Link href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center justify-center gap-2">
                   <Phone size={18} />
                   Call Now
