@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, ChevronRight } from "lucide-react";
+import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
 import { BRAND_NAME, LOGO_URL, PHONE, EMAIL, ADDRESS, WORKING_HOURS, SERVICES } from "@/lib/constants";
 
 export function Footer() {
