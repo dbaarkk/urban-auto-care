@@ -23,20 +23,8 @@ export function Footer() {
             <p className="text-muted-foreground text-sm leading-relaxed">
               Urban Auto is Raipur's premier modern mechanized car care brand, dedicated to pampering your vehicle with advanced technology and professional expertise.
             </p>
-            <div className="flex items-center gap-4">
-              {[Facebook, Instagram, Twitter].map((Icon, i) => (
-                <Link
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue transition-all"
-                >
-                  <Icon size={18} />
-                </Link>
-              ))}
             </div>
-          </div>
-
-          {/* Quick Links */}
+            {/* Quick Links */}
           <div className="flex flex-col gap-6">
             <h4 className="text-lg font-heading tracking-widest text-white uppercase">Quick Links</h4>
             <ul className="flex flex-col gap-3">
