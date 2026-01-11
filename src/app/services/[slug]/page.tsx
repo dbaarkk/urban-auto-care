@@ -101,19 +101,19 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </p>
 
             <div className="flex flex-wrap gap-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
-              <Button asChild size="lg" className="bg-brand-blue hover:bg-brand-blue/80 text-white rounded-none h-14 px-8 text-sm font-bold uppercase tracking-widest">
+              <Button asChild size="lg" className="bg-brand-blue hover:bg-brand-blue/80 text-white rounded-full h-14 px-8 text-sm font-bold uppercase tracking-widest">
                 <Link href="/contact" className="flex items-center gap-2">
                   <Calendar size={18} />
                   Book This Service
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/20 hover:bg-white/10 rounded-none h-14 px-8 text-sm font-bold uppercase tracking-widest text-white">
+              <Button asChild variant="outline" size="lg" className="border-white/20 hover:bg-white/10 rounded-full h-14 px-8 text-sm font-bold uppercase tracking-widest text-white">
                 <Link href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center gap-2">
                   <Phone size={18} />
                   Call Now
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-[#25D366]/50 text-[#25D366] hover:bg-[#25D366] hover:text-white rounded-none h-14 px-8 text-sm font-bold uppercase tracking-widest">
+              <Button asChild variant="outline" size="lg" className="border-[#25D366]/50 text-[#25D366] hover:bg-[#25D366] hover:text-white rounded-full h-14 px-8 text-sm font-bold uppercase tracking-widest">
                 <Link href={`https://wa.me/${WHATSAPP.replace(/\s/g, "")}`} className="flex items-center gap-2">
                   <MessageCircle size={18} />
                   WhatsApp
@@ -304,13 +304,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   Your car deserves the best care in Raipur. Let our experts bring back the shine and performance of your vehicle today.
                 </p>
                 <div className="flex flex-wrap justify-center gap-6">
-                  <Button asChild size="lg" className="bg-white text-brand-blue hover:bg-white/90 rounded-none h-16 px-10 text-base font-bold uppercase tracking-widest shadow-xl">
+                  <Button asChild size="lg" className="bg-white text-brand-blue hover:bg-white/90 rounded-full h-16 px-10 text-base font-bold uppercase tracking-widest shadow-xl">
                     <Link href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center gap-2">
                       <Phone size={20} />
                       Call Us: {PHONE}
                     </Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10 rounded-none h-16 px-10 text-base font-bold uppercase tracking-widest">
+                  <Button asChild variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10 rounded-full h-16 px-10 text-base font-bold uppercase tracking-widest">
                     <Link href={`https://wa.me/${WHATSAPP.replace(/\s/g, "")}`} className="flex items-center gap-2">
                       <MessageCircle size={20} />
                       WhatsApp Us
