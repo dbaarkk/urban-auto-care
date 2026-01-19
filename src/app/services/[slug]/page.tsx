@@ -18,7 +18,8 @@ import {
   Disc,
   ShieldCheck,
   Truck,
-  ShieldAlert
+  ShieldAlert,
+  Handshake
 } from "lucide-react";
 import { SERVICES, BRAND_NAME, PHONE, WHATSAPP } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -33,7 +34,8 @@ const iconMap: Record<string, any> = {
   Disc,
   ShieldCheck,
   Truck,
-  ShieldAlert
+  ShieldAlert,
+  Handshake
 };
 
 interface ServicePageProps {
@@ -96,7 +98,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <h1 className="text-5xl md:text-7xl font-heading text-white uppercase tracking-tighter mb-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
               {service.title}
             </h1>
-            <p className="text-xl md:text-2xl text-brand-blue font-medium mb-10 max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+            {service.price && (
+              <p className="text-2xl md:text-3xl text-brand-blue font-bold mb-4 animate-in fade-in slide-in-from-bottom-7 duration-700 delay-150">
+                {service.price}
+              </p>
+            )}
+            <p className="text-xl md:text-2xl text-white/70 font-medium mb-10 max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
               {service.tagline}
             </p>
 

@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import path from "node:path";
+
+const loaderPath = path.join(process.cwd(), "node_modules/orchids-visual-edits/src/component-tagger-loader.js");
 
 const nextConfig: NextConfig = {
   images: {
@@ -18,6 +21,13 @@ const nextConfig: NextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  turbopack: {
+    rules: {
+      "*.{jsx,tsx}": {
+        loaders: [loaderPath],
+      },
+    },
   },
 };
 

@@ -20,7 +20,8 @@ import {
   Disc,
   ShieldCheck,
   Truck,
-  ShieldAlert
+  ShieldAlert,
+  Handshake
 } from "lucide-react";
 import { BRAND_NAME, TAGLINE, PHONE, SERVICES } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -35,7 +36,8 @@ const iconMap: Record<string, any> = {
   Disc,
   ShieldCheck,
   Truck,
-  ShieldAlert
+  ShieldAlert,
+  Handshake
 };
 
 export default function Home() {
@@ -240,6 +242,9 @@ export default function Home() {
                       <h3 className="text-2xl font-heading text-white uppercase tracking-widest mb-2 group-hover:text-brand-blue transition-colors">
                         {service.title}
                       </h3>
+                      {service.price && (
+                        <p className="text-brand-blue font-bold text-sm mb-2">{service.price}</p>
+                      )}
                       <p className="text-xs text-muted-foreground line-clamp-2 mb-4 group-hover:text-white/70 transition-colors">
                         {service.tagline}
                       </p>

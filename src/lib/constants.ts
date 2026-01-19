@@ -163,6 +163,7 @@ export const SERVICES: Service[] = [
       slug: "periodic-service",
       title: "Periodic Service",
       tagline: "Expert Maintenance for Peak Performance",
+      price: "Starts at ₹2499/-",
       description: [
         "Regular maintenance is the key to a long-lasting vehicle. Our Periodic Service follows strict manufacturer guidelines to ensure your car remains in peak mechanical condition. We use high-quality oils, filters, and genuine spare parts.",
         "Our trained technicians perform a comprehensive 50-point inspection, identifying potential issues before they become expensive repairs. From oil changes to brake checks, we cover every critical system of your vehicle.",
@@ -196,6 +197,7 @@ export const SERVICES: Service[] = [
       slug: "denting-painting",
       title: "Denting & Painting",
       tagline: "Precision Body Work & Factory Finish",
+      price: "Starts at ₹1999/panel",
       description: [
         "Accidents happen, but they don't have to leave a permanent mark. Our body shop features expert denters and painters who specialize in restoring your car's body to its original shape and color. We use advanced pullers and tools for precision dent removal.",
         "Our paint booth ensures a dust-free environment for a flawless finish. We use computer-controlled color matching to ensure the new paint blends perfectly with your car's existing panels.",
@@ -229,6 +231,7 @@ export const SERVICES: Service[] = [
       slug: "suspension-fitments",
       title: "Suspension & Fitments",
       tagline: "Smooth Handling & Ride Comfort",
+      price: "Estimate Based",
       description: [
         "A car's suspension system is critical for both comfort and safety. We offer complete suspension overhaul services, including shock absorber replacement, bushing changes, and steering rack repairs.",
         "Whether you're feeling every bump on Raipur's roads or hearing strange noises while turning, our experts can diagnose and fix the root cause. We also handle specialized fitments and upgrades.",
@@ -262,6 +265,7 @@ export const SERVICES: Service[] = [
       slug: "clutch-body-parts",
       title: "Clutch & Body Parts",
       tagline: "Seamless Power Delivery & Component Replacement",
+      price: "Estimate Based",
       description: [
         "The clutch is the heart of your car's transmission. If you're experiencing gear slip, a hard pedal, or shuddering, it's time for a professional check. We replace clutch plates, pressure plates, and release bearings using OE-spec parts.",
         "We also handle the replacement of various body parts—from bumpers and grilles to lights and mirrors. Our technicians ensure that every part is fitted with factory-level precision.",
@@ -295,6 +299,7 @@ export const SERVICES: Service[] = [
       slug: "insurance-claims",
       title: "Insurance Claims",
       tagline: "Hassle-Free Accident Recovery",
+      price: "Cashless Facility",
       description: [
         "Dealing with insurance after an accident can be stressful. Urban Auto Raipur simplifies the process by acting as your bridge to the insurance company. We assist with documentation and coordinate with surveyors for a smooth claim process.",
         "We work with all major insurance providers to facilitate cashless repairs where applicable. Our goal is to get your car back on the road with minimal administrative burden on you.",
@@ -328,6 +333,7 @@ export const SERVICES: Service[] = [
       slug: "roadside-assistance",
       title: "Roadside Assistance",
       tagline: "Reliable Support Whenever You Need It",
+      price: "Starts at ₹999/-",
       description: [
         "Getting stranded on the road is every driver's nightmare. Urban Auto's Roadside Assistance is just a call away in Raipur. Whether it's a flat tyre, a dead battery, or an empty fuel tank, our quick-response team is ready to help.",
         "We provide on-site minor repairs to get you moving again. If the problem is more serious, we offer professional towing services to our workshop for comprehensive care.",
@@ -361,6 +367,7 @@ export const SERVICES: Service[] = [
       slug: "accidental-repair",
       title: "Accidental Repair",
       tagline: "Major Collision Repair Specialists",
+      price: "Estimate Based",
       description: [
         "Major accidents require more than just a quick fix; they require structural restoration. Our Accidental Repair center is equipped with heavy-duty chassis aligners and advanced welding equipment to restore your car's safety standards.",
         "We understand that a car's integrity is compromised after a collision. Our team focuses on restoring original crumple zones and ensuring that every mechanical and electrical system is re-integrated perfectly.",
@@ -394,12 +401,13 @@ export const SERVICES: Service[] = [
       slug: "car-dealership",
       title: "Car Dealership",
       tagline: "Buy & Sell Quality Pre-Owned Vehicles",
+      price: "Verified Vehicles",
       description: [
         "Urban Auto's Car Dealership connects buyers and sellers of quality pre-owned vehicles in Raipur. We offer a curated selection of thoroughly inspected cars that meet our high standards for reliability and value.",
         "Every vehicle in our dealership undergoes a comprehensive multi-point inspection by our expert technicians. We ensure mechanical soundness, verify documentation, and provide transparent history reports so you can buy with confidence.",
         "Whether you're looking to upgrade your ride or sell your current vehicle, our team provides fair valuations, hassle-free transactions, and professional guidance throughout the process.",
       ],
-      icon: "Car",
+      icon: "Handshake",
       image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1200",
       included: [
         "Multi-point vehicle inspection",
