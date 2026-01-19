@@ -163,7 +163,7 @@ export const SERVICES: Service[] = [
       slug: "periodic-service",
       title: "Periodic Service",
       tagline: "Expert Maintenance for Peak Performance",
-      price: "Starts at ₹2499/-",
+      price: "Estimate Based",
       description: [
         "Regular maintenance is the key to a long-lasting vehicle. Our Periodic Service follows strict manufacturer guidelines to ensure your car remains in peak mechanical condition. We use high-quality oils, filters, and genuine spare parts.",
         "Our trained technicians perform a comprehensive 50-point inspection, identifying potential issues before they become expensive repairs. From oil changes to brake checks, we cover every critical system of your vehicle.",
@@ -197,7 +197,7 @@ export const SERVICES: Service[] = [
       slug: "denting-painting",
       title: "Denting & Painting",
       tagline: "Precision Body Work & Factory Finish",
-      price: "Starts at ₹1999/panel",
+      price: "Estimate Based",
       description: [
         "Accidents happen, but they don't have to leave a permanent mark. Our body shop features expert denters and painters who specialize in restoring your car's body to its original shape and color. We use advanced pullers and tools for precision dent removal.",
         "Our paint booth ensures a dust-free environment for a flawless finish. We use computer-controlled color matching to ensure the new paint blends perfectly with your car's existing panels.",
@@ -299,7 +299,7 @@ export const SERVICES: Service[] = [
       slug: "insurance-claims",
       title: "Insurance Claims",
       tagline: "Hassle-Free Accident Recovery",
-      price: "Cashless Facility",
+      price: "Estimate Based",
       description: [
         "Dealing with insurance after an accident can be stressful. Urban Auto Raipur simplifies the process by acting as your bridge to the insurance company. We assist with documentation and coordinate with surveyors for a smooth claim process.",
         "We work with all major insurance providers to facilitate cashless repairs where applicable. Our goal is to get your car back on the road with minimal administrative burden on you.",
@@ -333,7 +333,7 @@ export const SERVICES: Service[] = [
       slug: "roadside-assistance",
       title: "Roadside Assistance",
       tagline: "Reliable Support Whenever You Need It",
-      price: "Starts at ₹999/-",
+      price: "Estimate Based",
       description: [
         "Getting stranded on the road is every driver's nightmare. Urban Auto's Roadside Assistance is just a call away in Raipur. Whether it's a flat tyre, a dead battery, or an empty fuel tank, our quick-response team is ready to help.",
         "We provide on-site minor repairs to get you moving again. If the problem is more serious, we offer professional towing services to our workshop for comprehensive care.",
