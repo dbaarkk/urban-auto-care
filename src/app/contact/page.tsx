@@ -21,6 +21,7 @@ import {
   WORKING_HOURS,
   SERVICES 
 } from "@/lib/constants";
+import { supabase } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -40,13 +41,14 @@ interface Message {
   email: string;
   service: string;
   message: string;
-  timestamp: string;
+  created_at: string;
 }
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showSecretPanel, setShowSecretPanel] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -55,14 +57,21 @@ export default function ContactPage() {
     message: ""
   });
 
+  const fetchMessages = async () => {
+    const { data } = await supabase
+      .from("messages")
+      .select("*")
+      .order("created_at", { ascending: false });
+    if (data) setMessages(data);
+  };
+
   useEffect(() => {
-    const stored = localStorage.getItem("urbanAutoMessages");
-    if (stored) {
-      setMessages(JSON.parse(stored));
+    if (showSecretPanel) {
+      fetchMessages();
     }
   }, [showSecretPanel]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (formData.name === "mridulsharma" && formData.phone === "8889822220") {
@@ -70,29 +79,28 @@ export default function ContactPage() {
       return;
     }
 
-    const newMessage: Message = {
-      id: Date.now().toString(),
+    setLoading(true);
+    
+    const { error } = await supabase.from("messages").insert({
       name: formData.name,
       phone: formData.phone,
-      email: formData.email,
-      service: formData.service,
-      message: formData.message,
-      timestamp: new Date().toLocaleString()
-    };
+      email: formData.email || null,
+      service: formData.service || null,
+      message: formData.message
+    });
 
-    const existingMessages = JSON.parse(localStorage.getItem("urbanAutoMessages") || "[]");
-    const updatedMessages = [...existingMessages, newMessage];
-    localStorage.setItem("urbanAutoMessages", JSON.stringify(updatedMessages));
+    setLoading(false);
 
-    setIsSubmitted(true);
-    setFormData({ name: "", phone: "", email: "", service: "", message: "" });
-    setTimeout(() => setIsSubmitted(false), 5000);
+    if (!error) {
+      setIsSubmitted(true);
+      setFormData({ name: "", phone: "", email: "", service: "", message: "" });
+      setTimeout(() => setIsSubmitted(false), 5000);
+    }
   };
 
-  const deleteMessage = (id: string) => {
-    const updated = messages.filter(m => m.id !== id);
-    setMessages(updated);
-    localStorage.setItem("urbanAutoMessages", JSON.stringify(updated));
+  const deleteMessage = async (id: string) => {
+    await supabase.from("messages").delete().eq("id", id);
+    setMessages(messages.filter(m => m.id !== id));
   };
 
   if (showSecretPanel) {
@@ -135,7 +143,7 @@ export default function ContactPage() {
                       <div>
                         <h3 className="text-white font-bold">{msg.name}</h3>
                         <p className="text-xs text-muted-foreground flex items-center gap-1">
-                          <Calendar size={12} /> {msg.timestamp}
+                          <Calendar size={12} /> {new Date(msg.created_at).toLocaleString()}
                         </p>
                       </div>
                     </div>
@@ -365,9 +373,13 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <Button type="submit" className="w-full bg-brand-blue hover:bg-brand-blue/80 text-white rounded-full h-14 text-sm font-bold uppercase tracking-widest group">
+                    <Button 
+                      type="submit" 
+                      disabled={loading}
+                      className="w-full bg-brand-blue hover:bg-brand-blue/80 text-white rounded-full h-14 text-sm font-bold uppercase tracking-widest group disabled:opacity-50"
+                    >
                       <span className="flex items-center gap-2">
-                        Send Message
+                        {loading ? "Sending..." : "Send Message"}
                         <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                       </span>
                     </Button>
