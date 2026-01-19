@@ -77,7 +77,7 @@ export default function Home() {
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading leading-[0.9] text-white mb-6 uppercase tracking-tighter">
               Premium <span className="text-brand-blue">Car Care</span> <br />
-              & Auto Services
+              & Services
             </h1>
             
             <p className="text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">

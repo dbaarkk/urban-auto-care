@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 import path from "node:path";
 
-const loaderPath = path.join(process.cwd(), "node_modules/orchids-visual-edits/src/component-tagger-loader.js");
+const loaderPath = require.resolve("orchids-visual-edits/loader.js");
 
 const nextConfig: NextConfig = {
   images: {

@@ -2,7 +2,7 @@ export const BRAND_NAME = "URBAN AUTO";
 export const TAGLINE = "Quality Car Service Provider in Raipur";
 export const PHONE = "+91 88898 22220";
 export const WHATSAPP = "918889822220";
-export const EMAIL = "support@theurbanauto.com";
+export const EMAIL = "theurbanauto@gmail.com";
 export const ADDRESS = "Sunder Nagar, Raipur, Chhattisgarh";
 export const WORKING_HOURS = "9:00 AM – 9:00 PM";
 export const LOGO_URL = "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/logo-1768160895635.jpg?width=8000&height=8000&resize=contain";
@@ -26,7 +26,7 @@ export const SERVICES: Service[] = [
       id: "car-wash",
       slug: "car-wash",
       title: "Car Wash",
-      tagline: "Professional Mechanized Cleaning for a Spotless Shine",
+      tagline: "Professional Cleaning Service At Home",
       price: "Starts at ₹349/- only",
       description: [
         "Urban Auto redefines the standard car wash experience in Raipur. Our mechanized cleaning process uses high-pressure water jets and premium pH-balanced shampoos to remove stubborn dirt, grime, and environmental contaminants without damaging your vehicle's delicate clear coat.",
@@ -57,43 +57,9 @@ export const SERVICES: Service[] = [
     ],
   },
     {
-      id: "detailing",
-      slug: "detailing",
-      title: "Detailing",
-      tagline: "Premium Multi-Stage Car Restoration",
-      price: "₹1499/-",
-      description: [
-        "Our professional detailing service is designed to restore your vehicle to its former glory. We use a combination of advanced techniques and premium products to deep clean and protect every surface of your car.",
-        "From paint decontamination to engine bay cleaning, our detailing package covers it all. We ensure that your car not only looks great but is also protected from the harsh environmental conditions of Raipur.",
-        "Experience the ultimate in automotive care with Urban Auto's signature detailing service.",
-      ],
-      icon: "Sparkles",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/aa06d267-e334-4e28-9c88-e58ebe55d970/detailing-1768161789371.png?width=8000&height=8000&resize=contain",
-      included: [
-        "Full exterior decontamination",
-        "Engine bay cleaning",
-        "Trim restoration",
-        "Paint sealant application",
-        "Wheel and tire detailing",
-        "Glass polishing",
-      ],
-      process: [
-        { step: "01", title: "Prep", description: "Thorough washing and surface decontamination." },
-        { step: "02", title: "Restoration", description: "Deep cleaning of all external and internal components." },
-        { step: "03", title: "Polishing", description: "Enhancing gloss and removing minor imperfections." },
-        { step: "04", title: "Protection", description: "Applying durable sealants for long-lasting results." },
-      ],
-      benefits: [
-        "Superior gloss and shine",
-        "Long-term surface protection",
-        "Enhanced resale value",
-        "Pristine vehicle condition",
-      ],
-    },
-    {
       id: "interior-detailing",
       slug: "interior-detailing",
-      title: "Interior",
+      title: "Interior Detailing",
       tagline: "Complete Cabin Rejuvenation & Sanitization",
       price: "₹1499/-",
       description: [
@@ -127,7 +93,7 @@ export const SERVICES: Service[] = [
     {
       id: "exterior-detailing",
       slug: "exterior-detailing",
-      title: "Exterior",
+      title: "Exterior Detailing",
       tagline: "Unmatched Shine & Paint Protection",
       price: "₹2499/-",
       description: [

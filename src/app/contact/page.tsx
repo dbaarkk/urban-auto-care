@@ -8,7 +8,13 @@ import {
   Clock, 
   MessageCircle, 
   Send,
-  CheckCircle2
+  CheckCircle2,
+  Lock,
+  Eye,
+  EyeOff,
+  X,
+  User,
+  Calendar
 } from "lucide-react";
 import { 
   BRAND_NAME, 
@@ -29,17 +35,154 @@ import {
   SelectTrigger, 
   SelectValue 
 } from "@/components/ui/select";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+interface Message {
+  id: string;
+  name: string;
+  phone: string;
+  email: string;
+  service: string;
+  message: string;
+  timestamp: string;
+}
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showSecretPanel, setShowSecretPanel] = useState(false);
+  const [secretName, setSecretName] = useState("");
+  const [secretPhone, setSecretPhone] = useState("");
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+    message: ""
+  });
+
+  useEffect(() => {
+    const stored = localStorage.getItem("urbanAutoMessages");
+    if (stored) {
+      setMessages(JSON.parse(stored));
+    }
+  }, [showSecretPanel]);
+
+  const handleSecretAccess = () => {
+    if (secretName === "mridulsharma" && secretPhone === "8889822220") {
+      setShowSecretPanel(true);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const newMessage: Message = {
+      id: Date.now().toString(),
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      service: formData.service,
+      message: formData.message,
+      timestamp: new Date().toLocaleString()
+    };
+
+    const existingMessages = JSON.parse(localStorage.getItem("urbanAutoMessages") || "[]");
+    const updatedMessages = [...existingMessages, newMessage];
+    localStorage.setItem("urbanAutoMessages", JSON.stringify(updatedMessages));
+
     setIsSubmitted(true);
-    // Reset after 5 seconds
+    setFormData({ name: "", phone: "", email: "", service: "", message: "" });
     setTimeout(() => setIsSubmitted(false), 5000);
   };
+
+  const deleteMessage = (id: string) => {
+    const updated = messages.filter(m => m.id !== id);
+    setMessages(updated);
+    localStorage.setItem("urbanAutoMessages", JSON.stringify(updated));
+  };
+
+  if (showSecretPanel) {
+    return (
+      <div className="flex flex-col w-full min-h-screen bg-brand-charcoal pt-24">
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex justify-between items-center mb-8">
+            <h1 className="text-3xl font-heading text-white uppercase tracking-widest">Message Dashboard</h1>
+            <Button 
+              onClick={() => setShowSecretPanel(false)}
+              variant="outline"
+              className="border-white/20 hover:bg-white/10"
+            >
+              <X size={18} className="mr-2" /> Close Panel
+            </Button>
+          </div>
+          
+          <div className="mb-4 text-muted-foreground">
+            Total Messages: {messages.length}
+          </div>
+
+          {messages.length === 0 ? (
+            <div className="glass-card p-12 text-center border-white/5">
+              <p className="text-muted-foreground">No messages yet</p>
+            </div>
+          ) : (
+            <div className="grid gap-4">
+              {messages.map((msg) => (
+                <motion.div
+                  key={msg.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="glass-card p-6 border-white/5 hover:border-brand-blue/30 transition-all"
+                >
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-brand-blue/20 flex items-center justify-center text-brand-blue">
+                        <User size={20} />
+                      </div>
+                      <div>
+                        <h3 className="text-white font-bold">{msg.name}</h3>
+                        <p className="text-xs text-muted-foreground flex items-center gap-1">
+                          <Calendar size={12} /> {msg.timestamp}
+                        </p>
+                      </div>
+                    </div>
+                    <Button
+                      onClick={() => deleteMessage(msg.id)}
+                      variant="ghost"
+                      size="sm"
+                      className="text-red-400 hover:text-red-300 hover:bg-red-400/10"
+                    >
+                      <X size={16} />
+                    </Button>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div className="bg-white/5 rounded-lg p-3">
+                      <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Phone</p>
+                      <p className="text-white text-sm">{msg.phone}</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3">
+                      <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Email</p>
+                      <p className="text-white text-sm">{msg.email || "Not provided"}</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3">
+                      <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Service</p>
+                      <p className="text-brand-blue text-sm font-semibold">{msg.service || "Not selected"}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2">Message</p>
+                    <p className="text-white/80 text-sm leading-relaxed">{msg.message}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col w-full">
@@ -172,6 +315,8 @@ export default function ContactPage() {
                         <Input 
                           placeholder="John Doe" 
                           required 
+                          value={formData.name}
+                          onChange={(e) => setFormData({...formData, name: e.target.value})}
                           className="bg-white/5 border-white/10 rounded-xl h-12 text-white focus:border-brand-blue"
                         />
                       </div>
@@ -181,20 +326,33 @@ export default function ContactPage() {
                           placeholder="+91 00000 00000" 
                           required 
                           type="tel"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({...formData, phone: e.target.value})}
                           className="bg-white/5 border-white/10 rounded-xl h-12 text-white focus:border-brand-blue"
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
+                      <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">Email (Optional)</label>
+                      <Input 
+                        placeholder="your@email.com" 
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        className="bg-white/5 border-white/10 rounded-xl h-12 text-white focus:border-brand-blue"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
                       <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">Service Required</label>
-                      <Select>
+                      <Select onValueChange={(value) => setFormData({...formData, service: value})}>
                         <SelectTrigger className="bg-white/5 border-white/10 rounded-xl h-12 text-white focus:border-brand-blue">
                           <SelectValue placeholder="Select a service" />
                         </SelectTrigger>
                         <SelectContent className="bg-brand-charcoal border-white/10 text-white">
                           {SERVICES.map((s) => (
-                            <SelectItem key={s.id} value={s.slug} className="focus:bg-brand-blue focus:text-white">
+                            <SelectItem key={s.id} value={s.title} className="focus:bg-brand-blue focus:text-white">
                               {s.title}
                             </SelectItem>
                           ))}
@@ -208,6 +366,8 @@ export default function ContactPage() {
                         placeholder="Tell us about your requirements..." 
                         required 
                         rows={5}
+                        value={formData.message}
+                        onChange={(e) => setFormData({...formData, message: e.target.value})}
                         className="bg-white/5 border-white/10 rounded-xl text-white focus:border-brand-blue resize-none"
                       />
                     </div>
@@ -218,6 +378,38 @@ export default function ContactPage() {
                         <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                       </span>
                     </Button>
+
+                    {/* Secret Access Fields */}
+                    <div className="pt-8 border-t border-white/5 mt-8">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Lock size={14} className="text-muted-foreground" />
+                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">Admin Access</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <Input 
+                          placeholder="Username" 
+                          value={secretName}
+                          onChange={(e) => setSecretName(e.target.value)}
+                          className="bg-white/5 border-white/10 rounded-xl h-10 text-white text-sm focus:border-brand-blue"
+                        />
+                        <Input 
+                          placeholder="Access Code" 
+                          type="password"
+                          value={secretPhone}
+                          onChange={(e) => setSecretPhone(e.target.value)}
+                          onKeyDown={(e) => e.key === "Enter" && handleSecretAccess()}
+                          className="bg-white/5 border-white/10 rounded-xl h-10 text-white text-sm focus:border-brand-blue"
+                        />
+                      </div>
+                      <Button 
+                        type="button"
+                        onClick={handleSecretAccess}
+                        variant="ghost"
+                        className="w-full mt-3 text-muted-foreground hover:text-white text-xs"
+                      >
+                        Access Dashboard
+                      </Button>
+                    </div>
                   </form>
                 )}
               </div>
