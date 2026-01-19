@@ -18,6 +18,7 @@ export interface Service {
   included: string[];
   process: { step: string; title: string; description: string }[];
   benefits: string[];
+  price?: string;
 }
 
 export const SERVICES: Service[] = [
@@ -26,6 +27,7 @@ export const SERVICES: Service[] = [
       slug: "car-wash",
       title: "Car Wash",
       tagline: "Professional Mechanized Cleaning for a Spotless Shine",
+      price: "Starts at ₹349/- only",
       description: [
         "Urban Auto redefines the standard car wash experience in Raipur. Our mechanized cleaning process uses high-pressure water jets and premium pH-balanced shampoos to remove stubborn dirt, grime, and environmental contaminants without damaging your vehicle's delicate clear coat.",
         "We don't just wash your car; we rejuvenate it. Our advanced equipment ensures that every nook and corner, including the underbody and wheel arches, is thoroughly cleaned. This attention to detail prevents corrosion and maintains your car's aesthetic appeal for longer.",
@@ -55,10 +57,45 @@ export const SERVICES: Service[] = [
     ],
   },
     {
+      id: "detailing",
+      slug: "detailing",
+      title: "Detailing",
+      tagline: "Premium Multi-Stage Car Restoration",
+      price: "₹1499/-",
+      description: [
+        "Our professional detailing service is designed to restore your vehicle to its former glory. We use a combination of advanced techniques and premium products to deep clean and protect every surface of your car.",
+        "From paint decontamination to engine bay cleaning, our detailing package covers it all. We ensure that your car not only looks great but is also protected from the harsh environmental conditions of Raipur.",
+        "Experience the ultimate in automotive care with Urban Auto's signature detailing service.",
+      ],
+      icon: "Sparkles",
+      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/aa06d267-e334-4e28-9c88-e58ebe55d970/detailing-1768161789371.png?width=8000&height=8000&resize=contain",
+      included: [
+        "Full exterior decontamination",
+        "Engine bay cleaning",
+        "Trim restoration",
+        "Paint sealant application",
+        "Wheel and tire detailing",
+        "Glass polishing",
+      ],
+      process: [
+        { step: "01", title: "Prep", description: "Thorough washing and surface decontamination." },
+        { step: "02", title: "Restoration", description: "Deep cleaning of all external and internal components." },
+        { step: "03", title: "Polishing", description: "Enhancing gloss and removing minor imperfections." },
+        { step: "04", title: "Protection", description: "Applying durable sealants for long-lasting results." },
+      ],
+      benefits: [
+        "Superior gloss and shine",
+        "Long-term surface protection",
+        "Enhanced resale value",
+        "Pristine vehicle condition",
+      ],
+    },
+    {
       id: "interior-detailing",
       slug: "interior-detailing",
-      title: "Interior Detailing",
+      title: "Interior",
       tagline: "Complete Cabin Rejuvenation & Sanitization",
+      price: "₹1499/-",
       description: [
         "Your car's interior is where you spend most of your time. Our interior detailing service goes beyond simple vacuuming to provide a deep, clinical clean. We use specialized steam cleaners and extraction machines to remove deep-seated dust, allergens, and bacteria from upholstery, carpets, and headliners.",
         "We pay special attention to every surface—leather, vinyl, plastic, and fabric. Our professional-grade chemicals are tough on stains but gentle on materials, ensuring your cabin looks and smells like new without any oily residue.",
@@ -90,8 +127,9 @@ export const SERVICES: Service[] = [
     {
       id: "exterior-detailing",
       slug: "exterior-detailing",
-      title: "Exterior Detailing",
+      title: "Exterior",
       tagline: "Unmatched Shine & Paint Protection",
+      price: "₹2499/-",
       description: [
         "Our Exterior Detailing is a comprehensive paint correction and protection process. We use multi-stage polishing techniques to remove swirl marks, minor scratches, and oxidation, restoring the original depth and clarity of your vehicle's paintwork.",
         "Raipur's harsh sun and industrial dust can take a toll on your car's exterior. We apply high-quality sealants or waxes that create a sacrificial barrier against UV rays, bird droppings, and acid rain.",
@@ -349,6 +387,39 @@ export const SERVICES: Service[] = [
         "Expertise in major collision repair",
         "Highest quality parts and materials",
         "Comprehensive warranty on repairs",
+      ],
+    },
+    {
+      id: "car-dealership",
+      slug: "car-dealership",
+      title: "Car Dealership",
+      tagline: "Buy & Sell Quality Pre-Owned Vehicles",
+      description: [
+        "Urban Auto's Car Dealership connects buyers and sellers of quality pre-owned vehicles in Raipur. We offer a curated selection of thoroughly inspected cars that meet our high standards for reliability and value.",
+        "Every vehicle in our dealership undergoes a comprehensive multi-point inspection by our expert technicians. We ensure mechanical soundness, verify documentation, and provide transparent history reports so you can buy with confidence.",
+        "Whether you're looking to upgrade your ride or sell your current vehicle, our team provides fair valuations, hassle-free transactions, and professional guidance throughout the process.",
+      ],
+      icon: "Car",
+      image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1200",
+      included: [
+        "Multi-point vehicle inspection",
+        "Documentation verification",
+        "Fair market valuation",
+        "Test drive facility",
+        "Financing assistance",
+        "After-sale support",
+      ],
+      process: [
+        { step: "01", title: "Selection", description: "Browse our curated inventory of quality vehicles." },
+        { step: "02", title: "Inspection", description: "Detailed report on vehicle condition and history." },
+        { step: "03", title: "Negotiation", description: "Transparent pricing with no hidden charges." },
+        { step: "04", title: "Handover", description: "Complete documentation and ownership transfer." },
+      ],
+      benefits: [
+        "Verified vehicle history",
+        "Quality assured cars",
+        "Transparent transactions",
+        "Professional support",
       ],
     },
 ];
