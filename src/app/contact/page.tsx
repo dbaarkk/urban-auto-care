@@ -9,15 +9,11 @@ import {
   MessageCircle, 
   Send,
   CheckCircle2,
-  Lock,
-  Eye,
-  EyeOff,
   X,
   User,
   Calendar
 } from "lucide-react";
 import { 
-  BRAND_NAME, 
   PHONE, 
   WHATSAPP, 
   EMAIL, 
@@ -50,8 +46,6 @@ interface Message {
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showSecretPanel, setShowSecretPanel] = useState(false);
-  const [secretName, setSecretName] = useState("");
-  const [secretPhone, setSecretPhone] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [formData, setFormData] = useState({
     name: "",
@@ -68,15 +62,14 @@ export default function ContactPage() {
     }
   }, [showSecretPanel]);
 
-  const handleSecretAccess = () => {
-    if (secretName === "mridulsharma" && secretPhone === "8889822220") {
-      setShowSecretPanel(true);
-    }
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    if (formData.name === "mridulsharma" && formData.phone === "8889822220") {
+      setShowSecretPanel(true);
+      return;
+    }
+
     const newMessage: Message = {
       id: Date.now().toString(),
       name: formData.name,
@@ -378,38 +371,6 @@ export default function ContactPage() {
                         <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                       </span>
                     </Button>
-
-                    {/* Secret Access Fields */}
-                    <div className="pt-8 border-t border-white/5 mt-8">
-                      <div className="flex items-center gap-2 mb-4">
-                        <Lock size={14} className="text-muted-foreground" />
-                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">Admin Access</span>
-                      </div>
-                      <div className="grid grid-cols-2 gap-4">
-                        <Input 
-                          placeholder="Username" 
-                          value={secretName}
-                          onChange={(e) => setSecretName(e.target.value)}
-                          className="bg-white/5 border-white/10 rounded-xl h-10 text-white text-sm focus:border-brand-blue"
-                        />
-                        <Input 
-                          placeholder="Access Code" 
-                          type="password"
-                          value={secretPhone}
-                          onChange={(e) => setSecretPhone(e.target.value)}
-                          onKeyDown={(e) => e.key === "Enter" && handleSecretAccess()}
-                          className="bg-white/5 border-white/10 rounded-xl h-10 text-white text-sm focus:border-brand-blue"
-                        />
-                      </div>
-                      <Button 
-                        type="button"
-                        onClick={handleSecretAccess}
-                        variant="ghost"
-                        className="w-full mt-3 text-muted-foreground hover:text-white text-xs"
-                      >
-                        Access Dashboard
-                      </Button>
-                    </div>
                   </form>
                 )}
               </div>
