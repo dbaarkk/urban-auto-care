@@ -1,5 +1,6 @@
 "use client";
 export const dynamic = "force-dynamic";
+export const prerender = false;
 import { motion } from "framer-motion";
 import { 
   Phone, 
