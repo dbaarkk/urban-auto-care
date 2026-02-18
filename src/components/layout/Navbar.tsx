@@ -55,7 +55,36 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+<div className="hidden md:flex items-center gap-8">
+  {navLinks.map((link) => (
+    <Link
+      key={link.name}
+      href={link.href}
+      className="text-sm font-medium hover:text-brand-blue transition-colors uppercase tracking-widest"
+    >
+      {link.name}
+    </Link>
+  ))}
+
+  {/* Explore App Link */}
+  <Link
+    href="https://theurbanauto.com/download"
+    className="text-brand-blue font-heading text-sm font-bold tracking-wide hover:opacity-80 transition whitespace-nowrap"
+  >
+    Explore our application →
+  </Link>
+
+  <Button
+    asChild
+    variant="outline"
+    className="border-brand-blue/50 text-brand-blue hover:bg-brand-blue hover:text-white rounded-full uppercase tracking-widest text-xs font-bold px-6"
+  >
+    <Link href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center gap-2">
+      <Phone size={14} />
+      {PHONE}
+    </Link>
+  </Button>
+</div>
           {navLinks.map((link) => (
             <Link
               key={link.name}
