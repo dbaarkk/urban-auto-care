@@ -34,6 +34,7 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* LEFT: Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <div className="relative w-12 h-12 overflow-hidden rounded-lg border border-brand-blue/20">
             <Image
@@ -53,45 +54,50 @@ export function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium hover:text-brand-blue transition-colors uppercase tracking-widest"
-            >
-              {link.name}
-            </Link>
-          ))}
+        {/* RIGHT SIDE */}
+        <div className="flex items-center gap-4">
 
-          {/* Explore Link (Desktop) */}
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium hover:text-brand-blue transition-colors uppercase tracking-widest"
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <Button
+              asChild
+              variant="outline"
+              className="border-brand-blue/50 text-brand-blue hover:bg-brand-blue hover:text-white rounded-full uppercase tracking-widest text-xs font-bold px-6"
+            >
+              <Link href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center gap-2">
+                <Phone size={14} />
+                {PHONE}
+              </Link>
+            </Button>
+          </div>
+
+          {/* BLUE LINK — visible on ALL screens */}
           <Link
             href="https://theurbanauto.com/download"
-            className="text-brand-blue font-heading text-sm font-bold tracking-wide hover:opacity-80 transition whitespace-nowrap"
+            className="text-brand-blue font-heading text-xs md:text-sm font-bold tracking-wide whitespace-nowrap hover:opacity-80 transition"
           >
             Explore our application →
           </Link>
 
-          <Button
-            asChild
-            variant="outline"
-            className="border-brand-blue/50 text-brand-blue hover:bg-brand-blue hover:text-white rounded-full uppercase tracking-widest text-xs font-bold px-6"
+          {/* Mobile Toggle */}
+          <button
+            className="md:hidden text-foreground"
+            onClick={() => setIsOpen(!isOpen)}
           >
-            <Link href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center gap-2">
-              <Phone size={14} />
-              {PHONE}
-            </Link>
-          </Button>
-        </div>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -114,15 +120,6 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
-
-              {/* Explore Link (Mobile) */}
-              <Link
-                href="https://theurbanauto.com/download"
-                onClick={() => setIsOpen(false)}
-                className="text-brand-blue text-lg font-heading font-bold uppercase tracking-widest"
-              >
-                Explore our application →
-              </Link>
 
               <Button asChild className="bg-brand-blue hover:bg-brand-blue/80 text-white rounded-full uppercase tracking-widest font-bold mt-4">
                 <Link href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center justify-center gap-2">
