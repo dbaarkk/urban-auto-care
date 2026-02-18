@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { BRAND_NAME, LOGO_URL, PHONE } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 
@@ -18,6 +19,7 @@ const navLinks = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,8 +57,7 @@ export function Navbar() {
         </Link>
 
         {/* RIGHT SIDE */}
-        <div className="flex items-center gap-4">
-
+        <div className="flex items-center gap-6">
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -81,13 +82,15 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* BLUE LINK — visible on ALL screens */}
-          <Link
-            href="https://theurbanauto.com/download"
-            className="text-brand-blue font-heading text-xs md:text-sm font-bold tracking-wide whitespace-nowrap hover:opacity-80 transition"
-          >
-            Explore our application →
-          </Link>
+          {/* BLUE LINK (hidden on /download) */}
+          {pathname !== "/download" && (
+            <Link
+              href="https://theurbanauto.com/download"
+              className="text-brand-blue font-heading text-xs md:text-sm font-bold tracking-wide whitespace-nowrap hover:opacity-80 transition"
+            >
+              Explore our application →
+            </Link>
+          )}
 
           {/* Mobile Toggle */}
           <button
@@ -96,7 +99,6 @@ export function Navbar() {
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
-
         </div>
       </div>
 
