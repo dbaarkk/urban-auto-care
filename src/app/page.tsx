@@ -45,6 +45,12 @@ export default function Home() {
     <div className="flex flex-col w-full">
       {/* HERO SECTION */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+        <Link
+  href="https://theurbanauto.com/download"
+  className="absolute top-6 right-6 z-20 text-brand-blue font-heading text-sm md:text-base font-bold tracking-wide hover:opacity-80 transition"
+>
+  Explore our application →
+</Link>
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
