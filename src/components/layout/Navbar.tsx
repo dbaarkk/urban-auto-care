@@ -13,7 +13,6 @@ const navLinks = [
   { name: "Services", href: "/#services" },
   { name: "About", href: "/#about" },
   { name: "Contact", href: "/contact" },
-  { name: "Download Our App", href: "/download" },
 ];
 
 export function Navbar() {
@@ -66,7 +65,7 @@ export function Navbar() {
             </Link>
           ))}
 
-          {/* Blue Explore Link */}
+          {/* Explore Link (Desktop) */}
           <Link
             href="https://theurbanauto.com/download"
             className="text-brand-blue font-heading text-sm font-bold tracking-wide hover:opacity-80 transition whitespace-nowrap"
@@ -115,6 +114,16 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
+
+              {/* Explore Link (Mobile) */}
+              <Link
+                href="https://theurbanauto.com/download"
+                onClick={() => setIsOpen(false)}
+                className="text-brand-blue text-lg font-heading font-bold uppercase tracking-widest"
+              >
+                Explore our application →
+              </Link>
+
               <Button asChild className="bg-brand-blue hover:bg-brand-blue/80 text-white rounded-full uppercase tracking-widest font-bold mt-4">
                 <Link href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center justify-center gap-2">
                   <Phone size={18} />
