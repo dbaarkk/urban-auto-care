@@ -82,16 +82,6 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* BLUE LINK (hidden on /download) */}
-          {pathname !== "/download" && (
-            <Link
-              href="https://theurbanauto.com/download"
-              className="text-brand-blue font-heading text-xs md:text-sm font-bold tracking-wide whitespace-nowrap hover:opacity-80 transition"
-            >
-              Explore our application →
-            </Link>
-          )}
-
           {/* Mobile Toggle */}
           <button
             className="md:hidden text-foreground"
